@@ -1,0 +1,48 @@
+﻿question,expected_answer,generated_answer,score,reason
+What is RAG?,RAG retrieves relevant external information and uses it to help generate an answer.,"**RAG** stands for **Retrieval-Augmented Generation**. 
+
+In simple terms, it is a technique in Artificial Intelligence that makes Large Language Models (like ChatGPT) smarter and more accurate by giving them an **""open-book"" exam** rather than a ""closed-book"" one.
+
+---
+
+### The Analogy: Open-Book vs. Closed-Book
+* **Standard LLM (Closed-Book):** Imagine asking a student a very specific question about your company’s internal HR policy. Even if the student is brilliant, they can only answer based on what they memorized in school. If they don't know, they might guess or make something up (**hallucination**).
+* **RAG (Open-Book):** Before answering, the student is handed the exact company policy manual, flips to the relevant page, reads the facts, and then writes a clear, well-spoken answer citing that manual.
+
+---
+
+### Why is RAG needed?
+Standard LLMs have three major limitations:
+1. **Knowledge Cutoffs:** They only know what was in their training data (e.g., they don't know today’s news).
+2. **Lack of Private Data:** They don't know your private documents, internal company wikis, or personal notes.
+3. **Hallucinations:** When they don't know the answer, they often invent plausible-sounding falsehoods.
+
+RAG fixes this **without having to retrain or fine-tune the model** (which is extremely expensive and time-consuming).
+
+---
+
+### How RAG Works (Step-by-Step)
+
+1. **Ingestion (Preparation):**
+   * Your documents (PDFs, Word docs, web pages) are broken into smaller chunks.
+   * These chunks are converted into numerical representations called **embeddings** and stored in a specialized **Vector Database**.
+2. **Retrieval:**
+   * A user asks a question (e.g., *""What is our policy on parental leave?""*).
+   * The system searches the database for the text chunks most relevant to that question.
+3. **Augmentation:**
+   * The system combines the user's original question with the retrieved chunks into a new prompt:
+     > *""Answer the user's question using only the following context: [Retrieved text chunks]. Question: What is our policy on parental leave?""*
+4. **Generation:**
+   * The LLM reads the context and generates an accurate, natural-language answer based strictly on the provided documents.
+
+---
+
+### Key Benefits of RAG
+* **Accuracy:** Significantly reduces hallucinations because the model is grounded in real facts.
+* **Cost-Effective:** It is much cheaper to update a database than to retrain or fine-tune an AI model.
+* **Up-to-Date:** If a policy changes today, you just update the document in the database, and the AI knows it immediately.
+* **Source Attribution:** RAG allows the model to provide citations (e.g., *""According to page 4 of the Employee Handbook...""*), allowing humans to verify the source.
+
+---
+
+*(Note: In project management, **RAG** can also refer to the **Red, Amber, Green** status reporting system, but in the context of modern technology and AI, it almost always means Retrieval-Augmented Generation.)*",5,"The generated answer accurately captures the core definition provided in the reference answer and expands on it with clear, detailed, and correct explanations."
