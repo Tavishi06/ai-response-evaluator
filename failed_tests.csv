@@ -1,0 +1,4 @@
+﻿question,error_type,error
+What is an API?,ReadError,[WinError 10053] An established connection was aborted by the software in your host machine
+What is RAG?,ConnectError,[Errno 11001] getaddrinfo failed
+What is Python?,ConnectError,[Errno 11001] getaddrinfo failed
